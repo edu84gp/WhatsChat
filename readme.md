@@ -1,4 +1,4 @@
-# 💬 Chat en Tiempo Real con WebSockets (Socket.io)
+# 💬 WhatsChat - Chat en Tiempo Real con WebSockets (Socket.io)
 
 Aplicación web de chat en tiempo real desarrollada como práctica de desarrollo Full Stack (módulo Back-End). Utiliza una arquitectura cliente-servidor con comunicación bidireccional mediante **WebSockets (Socket.io)** y cuenta con una interfaz de usuario inspirada en **WhatsApp Web**.
 
@@ -37,7 +37,7 @@ Aplicación web de chat en tiempo real desarrollada como práctica de desarrollo
 ## 📁 Estructura del Proyecto
 
 ```text
-websocket-ejercicio/
+WhatsChat/
 ├── public/
 │   ├── index.html           # Página principal del chat
 │   └── src/
@@ -45,10 +45,11 @@ websocket-ejercicio/
 │       │   └── style.css    # Estilos de la aplicación (tema WhatsApp)
 │       └── js/
 │           └── script.js    # Lógica del cliente y conexión Socket.io
+├── .env.example             # Plantilla de variables de entorno
 ├── node_modules/            # Dependencias del proyecto
 ├── package.json             # Configuración del proyecto y scripts
 ├── server.js                # Servidor Node.js, Express y Socket.io
-└── README.md                # Documentación del proyecto
+└── readme.md                # Documentación del proyecto
 ```
 
 ---
@@ -69,14 +70,40 @@ cd websocket-ejercicio
 npm install
 ```
 
-### 4. Iniciar el servidor
+### 4. Configurar las Variables de Entorno (.env)
+Para que **WhatsChat** funcione correctamente, es necesario crear un archivo `.env` en la raíz del proyecto para definir el puerto de escucha y la clave de API (API Key) de Ollama.
+
+Copia la plantilla `.env.example`:
+
+**En Linux / macOS:**
+```bash
+cp .env.example .env
+```
+
+**En Windows (PowerShell):**
+```powershell
+Copy-Item .env.example .env
+```
+
+Abre el archivo `.env` creado y añade tus valores:
+```env
+# Puerto del servidor
+PORT=3000
+
+# API Key de Ollama
+OLLAMA_API_KEY=tu_api_key_aqui
+```
+
+> **Nota de seguridad:** El archivo `.env` contiene credenciales sensibles y está incluido en `.gitignore` para evitar que se suba al repositorio.
+
+### 5. Iniciar el servidor
 ```bash
 npm run start
 ```
-> El servidor se iniciará automáticamente en: **`http://localhost:3000`**
+> El servidor se iniciará en el puerto configurado (por defecto: **`http://localhost:3000`**)
 
-### 5. Probar el chat
-1. Abre tu navegador y accede a `http://localhost:3000`.
+### 6. Probar el chat
+1. Abre tu navegador y accede a `http://localhost:3000` (o al puerto configurado en el `.env`).
 2. Abre una **segunda pestaña** (o una ventana de incógnito) para simular a otro usuario.
 3. Cambia el nombre de usuario en cada pestaña y empieza a chatear en tiempo real.
 
