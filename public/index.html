@@ -8,15 +8,14 @@
 </head>
 <body>
 
-  <!-- Contenedor principal de la aplicación -->
   <div class="chat-wrapper">
     
     <!-- Encabezado estilo WhatsApp -->
     <header class="chat-header">
       <div class="chat-header-info">
-        <div class="chat-avatar" title="Grupo del Chat">👥</div>
+        <div class="chat-avatar" title="Grupo del Chat">💬</div>
         <div class="chat-title-group">
-          <h1 class="chat-title">Grupo de Chat</h1>
+          <h1 class="chat-title">WhatsChat</h1>
           <div class="chat-status" id="chat-status">
             <span class="status-dot disconnected" id="status-dot"></span>
             <span class="status-text" id="status-text">conectando...</span>
@@ -24,7 +23,6 @@
         </div>
       </div>
 
-      <!-- Configuración del nombre del usuario -->
       <div class="chat-user-config">
         <label for="username-input">Tú:</label>
         <input 
@@ -36,14 +34,12 @@
       </div>
     </header>
 
-    <!-- Área de mensajes con el fondo clásico de WhatsApp -->
     <main class="chat-messages" id="chat-messages">
       <div class="system-message">
         <span>🔒 Los mensajes están sincronizados en tiempo real mediante WebSockets.</span>
       </div>
     </main>
 
-    <!-- Pie de página con campo de texto y botón circular de envío -->
     <footer class="chat-footer">
       <form id="chat-form" class="chat-form">
         <input 
@@ -64,9 +60,7 @@
 
   </div>
 
-  <!-- CDN de Socket.io -->
   <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
-  <!-- Lógica JavaScript del cliente -->
   <script src="src/js/script.js"></script>
 </body>
 </html>

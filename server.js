@@ -15,13 +15,11 @@ app.use(express.static("public"));
 io.on("connection", (socket) => {
   console.log("Un cliente se ha conectado con ID:", socket.id);
 
-  // Evento principal del chat: retransmite el mensaje a todos los clientes
   socket.on("chat:message", (data) => {
     console.log("Mensaje recibido:", data);
     io.emit("chat:message", data);
   });
 
-  // Evento de prueba del bootcamp
   socket.on("mensaje", (data) => {
     console.log("Mensaje recibido del cliente:", data);
     socket.emit("respuesta", "Mensaje recibido correctamente");
